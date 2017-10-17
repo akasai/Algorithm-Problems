@@ -1,5 +1,5 @@
 public class Main{
-public static void main(String[] args){
+	public static void main(String[] args){
 		String[] inputStr = {"1S2D*3T", "1D2S#10S", "1D2S0T", "1S*2T*3S", "1D#2S*3S", "1T2D3D#", "1D2S3T*"};
 
 		for(String str : inputStr)
@@ -7,8 +7,8 @@ public static void main(String[] args){
 	}
 	
 	private static int Scoring(String inputStr){
-		String[] scores = inputStr.split("[A-Z](\\*)?(\\#)?");
-		String[] command = inputStr.split("\\d+");
+		String[] scores = inputStr.split("[A-Z](\\*)?(\\#)?");	//score 분리
+		String[] command = inputStr.split("\\d+");	//command분리
 		int result[] = new int[3];
 		
 		for(int i = 0; i < 3; i++){
@@ -35,7 +35,6 @@ public static void main(String[] args){
 		}
 		int total = 0;
 		for(int i : result)
-			//System.out.println(i);
 			total += i;
 		
 		return total;
