@@ -8,14 +8,10 @@ public class Main{
 		int arr1[] = {9,20,28,18,11};
 		int arr2[] = {30,1,21,17,28};
 
-		int temp[] = new int[size]; //비트 연산 결과
 		String ret[] = new String[size];  //최종 결과
 
 		for(int i = 0; i < size; i++)
-			temp[i] = arr1[i] | arr2[i];  //10진수 비트연산
-
-		for(int i = 0; i < size; i++)
-			ret[i] = toBinary(temp[i], size); //10진수 -> 2진수 문자열
+			ret[i] = toBinary(arr1[i] | arr2[i], size); //10진수 -> 2진수 문자열
 
 		for(String r : ret)
 			System.out.println(r);	
