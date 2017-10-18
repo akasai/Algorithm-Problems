@@ -2,6 +2,9 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 public class Main{
+	static final int HIT = 1;
+	static final int MISS = 5;
+	
 	public static void main(String[] args){
 		/* input  고정 */
 		int cacheSize[] = {3, 3, 2, 5, 2, 0};
@@ -33,7 +36,7 @@ public class Main{
 			if(cache_mem.contains(c.toLowerCase())){	//Cache에 있을 경우
 				cache_mem.remove(c.toLowerCase());
 				cache_mem.add(c.toLowerCase());
-				ret_time += 1;
+				ret_time += HIT;
 			}else{						//Cache에 없을 경우
 				if(cache_mem.size() < cache){	//CacheSize보다 작을 경우
 					cache_mem.add(c.toLowerCase());
@@ -41,7 +44,7 @@ public class Main{
 					cache_mem.poll();
 					cache_mem.add(c.toLowerCase());
 				}
-				ret_time += 5;
+				ret_time += MISS;
 			}
 		}
 		return ret_time;
@@ -50,7 +53,7 @@ public class Main{
 	private static int Schedualing(int cache, String city[]){
 		//cache크기에 따른 예외처리
 		if(cache == 0 || cache >= city.length)
-			return 5*city.length;
+			return MISS*city.length;
 		
 		String cache_mem[] = new String[cache];		//Cache메모리
 		int ret_time = 0;				//소요시간
@@ -58,7 +61,7 @@ public class Main{
 		/* Cache Size만큼 우선 저장 */
 		for(int i = 0; i < cache; i++){
 			cache_mem[i] = city[i];
-			ret_time += 5;
+			ret_time += MISS;
 		}
 		
 		/* 나머지List 스케줄링 */
@@ -73,10 +76,10 @@ public class Main{
 		
 		if(isInArray(target, array)){	//Cache에 있을 경우
 			changeQueue(getStringIndex(target, array), target, array);
-			ret += 1;
+			ret += HIT;
 		}else{				//Cache에 없을 경우
 			changeQueue(0, target, array);
-			ret += 5;
+			ret += MISS;
 		}
 		
 		return ret;
