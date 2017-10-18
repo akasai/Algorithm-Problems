@@ -17,7 +17,7 @@ public class Main{
 		
 		System.out.println("----- Stack -----");
 		for(int i = 0; i < cacheSize.length; i++)
-			System.out.println(Schedualing(cacheSize[i], cities[i]));
+			System.out.println(LRU_Array(cacheSize[i], cities[i]));
 		
 		System.out.println("----- Queue -----");
 		for(int i = 0; i < cacheSize.length; i++)
@@ -50,7 +50,7 @@ public class Main{
 		return ret_time;
 	}
 	/* LRU 알고리즘 : Array */
-	private static int Schedualing(int cache, String city[]){
+	private static int LRU_Array(int cache, String city[]){
 		//cache크기에 따른 예외처리
 		if(cache == 0 || cache >= city.length)
 			return MISS*city.length;
