@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main{
-    public static void main(String[] args){
+	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		int line = sc.nextInt();
 		
@@ -12,7 +12,7 @@ public class Main{
 		
 		System.out.println(Stairing(line, stairs));
 	}
-    public static int MAX(int a, int b){
+    	public static int MAX(int a, int b){
 		if(a >= b)	return a;
 		else		return b;
 	}
