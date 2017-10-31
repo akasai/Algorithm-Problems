@@ -9,6 +9,9 @@ public class Main{
 
 		System.out.println(findLCS(str1, str2));
 	}
+	public static int MAX(int a, int b){
+		return a>=b? a:b;
+	}
 	private static int findLCS(String a, String b){
 		int DP[][] = new int[b.length()+1][a.length()+1];
 
@@ -17,8 +20,7 @@ public class Main{
 				if(a.charAt(j-1) == b.charAt(i-1))
 					DP[i][j] = DP[i-1][j-1] + 1;
 				else{
-					if(DP[i][j-1] > DP[i-1][j])	DP[i][j] = DP[i][j-1];
-					else				DP[i][j] = DP[i-1][j];
+					DP[i][j] = MAX(DP[i-1][j],DP[i][j-1]);
 				}
 			}
 		}
