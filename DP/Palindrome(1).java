@@ -13,7 +13,7 @@ public class Main{
 		}
 		
 		int j = 0;
-		for(int g = 2; g <= size; g++){	//글자들 사이에 간격
+		for(int g = 3; g <= size; g++){	//글자들 사이에 간격
 			for(int i = 0; i < size-g+1; i++){  //세로 인덱스
 				j = i + g - 1;  //가로 인덱스
 				
