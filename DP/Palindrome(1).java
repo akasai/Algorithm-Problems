@@ -3,6 +3,6 @@ public class Main{
     LPS("LEVEL"); 
   }
   private static int LPS(String input){
-  
+
   }
 }
