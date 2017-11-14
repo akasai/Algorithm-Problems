@@ -9,6 +9,12 @@ public class Main{
       a[i] = r.nextInt(100);
     selection(a);
   }
+ /*
+  * Selection Sorting
+  * Best : O(n)
+  * Avg  : O(n^2)
+  * Worst: O(n^2)
+  */
   private static void selection(int[] a){
     int size = a.length;
     int min = 0;
