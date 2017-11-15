@@ -11,6 +11,12 @@ public class Main{
       
     Shell(a);
   }
+/*
+ * Shell sorting
+ * Best : O(n)
+ * Avg  : O(n^1.5) C.B.C
+ * Worst: O(n^1.5) C.B.C
+ */
   private static void Shell(int[] a){
     int size = a.length;
     int key = 0;
