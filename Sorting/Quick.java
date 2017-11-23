@@ -19,7 +19,7 @@ public class Main{
  */
  private static void Quick(int[] a, int left, int right){
   if(right - left > 0){
-    int q = Partition(a, left, right);
+    int q = Partition(a, left, right);  //중앙 pivot인덱스(정렬완료된 부분)
     Quick(a, left, q-1);
     Quick(a, q+1, right);
   }
@@ -32,13 +32,14 @@ public class Main{
   while(low < high){
     while(low <= right && a[low] < pivot) low++;
     while(high >= left && a[high] > pivot)  high--;
-    
+    /* 조건에 맞는 요소간 SWAP */
     if(low < high){
       int tmp = a[low];
       a[low] = a[high];
       a[high] = tmp;
     }
   }
+  /* pivot변경 */
   int temp = a[left];
   a[left] = a[high];
   a[high] = temp;
