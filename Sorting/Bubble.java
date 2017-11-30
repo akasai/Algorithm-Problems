@@ -20,7 +20,7 @@ public class Main{
     
     for(int i = size-1; i > 0; i--){
       for(int j = 0; j < i; j++){
-        if(a[i] > a[i+1]){
+        if(a[j] > a[j+1]){
           int tmp = a[j+1];
           a[j+1] = a[j];
           a[j] = temp;
