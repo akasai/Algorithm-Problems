@@ -27,7 +27,7 @@ public class Main{
         /* Insertion */
         for(int i = start+gap; i < size; i+=gap){ //비정렬 구간
           key = a[i];
-          for(int j = i-gap; i >= 0 && key < a[j]; j-=gap){ //정렬 구간
+          for(int j = i-gap; j >= start && key < a[j]; j-=gap){ //정렬 구간
             a[j+gap] = a[j];
             a[j] = key;
           }
